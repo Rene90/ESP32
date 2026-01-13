@@ -12,6 +12,5 @@ void loop() {
   digitalWrite(led,led_sta);
   led_sta = !led_sta;
   delay(del);
-  
-  delay(del);
+
 }
