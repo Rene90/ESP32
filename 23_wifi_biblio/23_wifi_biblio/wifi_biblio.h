@@ -1,4 +1,4 @@
-void f_wifi_sta_init(char *_ssid ".:PC Puma FI:.", char *_pass = NULL);
+void f_wifi_sta_init(char *_ssid= ".:PC Puma FI:.", char *_pass = NULL);
 void f_wifi_ap_init(char *_ssid, char *_pass);
 
 //Función que inicializa WiFi en modo estación

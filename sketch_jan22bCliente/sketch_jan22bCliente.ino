@@ -9,7 +9,7 @@
 #define ssid "CD_UNAM"
 #define pass "MegaChidoLiro"
 int cta=0;
-const char* serverIP="192.168.50.90";
+const char* serverIP="192.168.50.151";
 
 void setup() {
   // UART
@@ -21,7 +21,7 @@ void setup() {
   
   Serial.println();
   Serial.println("Cliente TCP");
-  Serial.print();
+
   
 }
 
@@ -29,7 +29,7 @@ void loop() {
   // put your main code here, to run repeatedly:
   WiFiClient client;//Crea instancia cliente
   Serial.println("Conectando con el servidor");
-  if(client.connected(serverIP, 714)){//servidor conectado
+  if(client.connect(serverIP, 714)){//servidor conectado
     Serial.println("Servidor conectado");
     Serial.println("Enviando datos...");
     cta++; //Incrementa cuenta
@@ -39,7 +39,7 @@ void loop() {
       if(millis()-timeout> 5000){//Espera solo por 5 segundos
         Serial.println("Error Tiempo de espera superado");
         client.stop();
-        return
+        return;
       }
 
     }
